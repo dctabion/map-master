@@ -2,9 +2,11 @@ extends layout
 include ./includes/mixins.jade
 
 block content
-  h1 Check out this map!
-  +testMixin()
+  #display
+    h1#country-name Click on a province!
   
+  //- +testMixin()
+
   #ocean
     include ./includes/map.jade
     
