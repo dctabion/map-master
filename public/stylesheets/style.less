@@ -14,6 +14,7 @@ a {
   width: 100%;
   position: fixed;
   z-index: 1;
+  background-color: brown;
 }
 
 #display-panel h1 {
@@ -22,12 +23,14 @@ a {
 }
 
 .land {
-  -webkit-transition: width 0.1s;
-  transition: fill 0.1s;
+  -webkit-transition: fill 0.1s;
+  transition: stroke 1s;
 }
 
 .land:hover {
-  fill: darkblue;
+  stroke: blue;
+  fill: white;
+
 }
 
 .land:active {

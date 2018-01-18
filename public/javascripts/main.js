@@ -6,8 +6,13 @@ window.onload = function() {
   /* -------------- INITIALIZE GAME ----------------*/
 
   // Initialize audio
-  var audioClickLand = document.getElementById('audio-click-land');
   var audioDisplayPanel = document.getElementById('audio-display-panel');
+  audioDisplayPanel.volume = 0.1
+  var audioDisplayPanelPlaying = false;
+
+  var audioClickLand = document.getElementById('audio-click-land');
+  var audioMouseEnterLand = document.getElementById('audio-mouse-enter-land');
+
   // audioClickLand.play();
   // audioDisplayPanel.play();
 
@@ -19,12 +24,19 @@ window.onload = function() {
     // console.log('title: ', $("#" +this.id).attr("title"));
 
     // Display country name when event occurs
-    document.getElementById('country-name').innerHTML = $("#" + this.id).attr("title");
+    document.getElementById('country-name').innerHTML = ("You've discovered " + $("#" + this.id).attr("title") + ".");
+    audioClickLand.currentTime = 0;
     audioClickLand.play();
   });
 
+  $(".land").mouseenter(function(){
+    audioMouseEnterLand.currentTime = 0;
+    audioMouseEnterLand.play();
+  });
+
   $("#display-panel").click(function(){
-    audioDisplayPanel.play();
+    audioDisplayPanelPlaying ? audioDisplayPanel.pause() : audioDisplayPanel.play();
+    audioDisplayPanelPlaying = !audioDisplayPanelPlaying;
   });
 
   // create an array of countries
