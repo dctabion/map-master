@@ -2,13 +2,18 @@ extends layout
 include ./includes/mixins.jade
 
 block content
-  #display
-    h1#country-name Click on a province!
+  #display-panel
+    h1#country-name Click to discover regions on the map!
   
   //- +testMixin()
 
-  #ocean
-    include ./includes/map.jade
+  #map-container
+    include ./includes/map-phillipines.jade
+  //-   #map
+      //- include ./includes/map-usa.jade
+      //- include ./includes/map-phillipines.jade
+  
+  //- include ./includes/map-usa.jade
     
   script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
   script(src="/javascripts/main.js")

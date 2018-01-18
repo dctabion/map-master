@@ -5,7 +5,7 @@ window.onload = function() {
 
   /* -------------- INITIALIZE GAME ----------------*/
   // Attach handler to display country
-  $(".land").hover(function(){
+  $(".land").mousedown(function(){
     // console.log('click!');
     // console.log('ID: ', this.id);
     // console.log('class: ', $("#" +this.id).attr("class"));
