@@ -4,6 +4,13 @@ window.onload = function() {
   // Wait for user to start game
 
   /* -------------- INITIALIZE GAME ----------------*/
+
+  // Initialize audio
+  var audioClickLand = document.getElementById('audio-click-land');
+  var audioDisplayPanel = document.getElementById('audio-display-panel');
+  // audioClickLand.play();
+  // audioDisplayPanel.play();
+
   // Attach handler to display country
   $(".land").mousedown(function(){
     // console.log('click!');
@@ -13,6 +20,11 @@ window.onload = function() {
 
     // Display country name when event occurs
     document.getElementById('country-name').innerHTML = $("#" + this.id).attr("title");
+    audioClickLand.play();
+  });
+
+  $("#display-panel").click(function(){
+    audioDisplayPanel.play();
   });
 
   // create an array of countries
@@ -52,6 +64,7 @@ window.onload = function() {
   countries = countryPathsFromSVG.map(createCountryObject);
   // console.log(countries);
   console.log("countries[3]: ", countries[3]);
+
 
   // Play start game sound
 
